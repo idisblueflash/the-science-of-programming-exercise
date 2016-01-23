@@ -24,8 +24,9 @@ export default class Drill extends React.Component {
 	renderChecked = () => {
 		return <div>
 			{this.props.data.label}
-			<input id={this.props.data.id} placeholder="all states: FF" onKeyPress={this.updateDrill} />
-			<span>{(this.props.data.key == this.props.data.answer.toUpperCase()) ? "✔️" : "❌ key:" + this.props.data.key}</span>
+			<input id={this.props.data.id} placeholder="all states: FF" 
+				onKeyPress={this.updateDrill} 
+				value={(this.props.data.key == this.props.data.answer.toUpperCase()) ? "✔️" : "❌ key:" + this.props.data.key}/>
 		</div>;
 	};
 	updateDrill = (e) => {
@@ -37,6 +38,8 @@ export default class Drill extends React.Component {
 			if(this.props.onUpdate && value.trim()) {
 				this.props.onUpdate(value);
 			}	
+		}else{
+			this.setState({checked: false});
 		}
 	};
 }
