@@ -12,10 +12,27 @@ const common = {
 	// Entry accepts a path or an object of entries.
 	// The build chapter contains an example of the latter.
 	entry: PATHS.app,
+	resolve: {
+		extensions: ['', '.js', '.jsx']
+	},
 	output: {
 		path: PATHS.build,
 		filename: 'bundle.js'
-	}
+	},
+	module: {
+		loaders: [
+			{
+				test: /\.css$/,
+				loaders: ['style', 'css'],
+				include: PATHS.app
+			},
+			{
+				test: /\.jsx?$/,
+				loaders: ['babel?cacheDirectory'],
+				include: PATHS.app
+			}
+		]
+	},
 };
 
 // Default configuration
@@ -31,15 +48,6 @@ if(TARGET === 'start' || !TARGET) {
 			stats: 'errors-only',
 			host: process.env.HOST,
 			port: process.env.PORT
-		},
-		module: {
-			loaders: [
-				{
-					test: /\.css$/,
-					loaders: ['style', 'css'],
-					include: PATHS.app
-				}
-			]
 		},
 		plugins: [
 			new webpack.HotModuleReplacementPlugin()
