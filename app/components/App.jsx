@@ -28,11 +28,19 @@ export default class App extends React.Component {
 		const drills = this.state.drills;
 		return (
 			<div>
-				<Drills datas={drills} />
+				<Drills datas={drills} onUpdate={this.updateDrill} />
 			</div>
 		);
 	}
-	checkDrill = (id) => {
-		console.log(id);
+	updateDrill = (id, answer) => {
+		console.log(id, answer);
+		const drills = this.state.drills.map(drill => {
+			if(drill.id === id && answer) {
+				drill.answer = answer;
+			}
+			return drill;
+		});
+
+		this.setState({drills});
 	};
 }
