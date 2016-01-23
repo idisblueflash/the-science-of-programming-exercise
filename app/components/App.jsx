@@ -1,5 +1,6 @@
 import uuid from 'node-uuid';
 import React from 'react';
+import Drill from './Drill.jsx';
 
 export default class App extends React.Component {
 	constructor(props){
@@ -26,9 +27,14 @@ export default class App extends React.Component {
 		return (
 			<div>
 				<ul>{drills.map(drill =>
-					<li key={drill.id}>{drill.label}</li>
+					<li key={drill.id}>
+						<Drill data={drill} />
+					</li>
 					)}</ul>
 				</div>
 		);
 	}
+	checkDrill = (drill) => {
+		console.log(drill);
+	};
 }
