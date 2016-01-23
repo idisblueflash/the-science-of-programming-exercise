@@ -1,6 +1,6 @@
 import uuid from 'node-uuid';
 import React from 'react';
-import Drill from './Drill.jsx';
+import Drills from './Drills.jsx';
 
 export default class App extends React.Component {
 	constructor(props){
@@ -11,13 +11,15 @@ export default class App extends React.Component {
 					id: uuid.v4(),
 					label: 'a)',
 					answer: '',
-					key:'FF'
+					key:'FF',
+					checkFlag: false
 				},
 				{
 					id: uuid.v4(),
 					label: 'b)',
 					answer: '',
-					key:'FF'
+					key:'FF',
+					checkFlag: false
 				}
 			]
 		}
@@ -26,15 +28,11 @@ export default class App extends React.Component {
 		const drills = this.state.drills;
 		return (
 			<div>
-				<ul>{drills.map(drill =>
-					<li key={drill.id}>
-						<Drill data={drill} />
-					</li>
-					)}</ul>
-				</div>
+				<Drills datas={drills} />
+			</div>
 		);
 	}
-	checkDrill = (drill) => {
-		console.log(drill);
+	checkDrill = (id) => {
+		console.log(id);
 	};
 }
