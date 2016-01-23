@@ -25,7 +25,7 @@ export default class Drill extends React.Component {
 		return <div>
 			{this.props.data.label}
 			<input id={this.props.data.id} placeholder="all states: FF" onKeyPress={this.updateDrill} />
-			<span>{(this.props.data.key == this.props.data.answer) ? "v" : "x key:" + this.props.data.key}</span>
+			<span>{(this.props.data.key == this.props.data.answer.toUpperCase()) ? "✔️" : "❌ key:" + this.props.data.key}</span>
 		</div>;
 	};
 	updateDrill = (e) => {
