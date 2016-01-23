@@ -10,6 +10,12 @@ ul {
 }
 
 li {
+	font-size: 1.6em;
 	float: left;
 	padding: 10px;
+}
+
+input {
+	font-size: inherit;
+	width: 100px;
 }
