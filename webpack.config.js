@@ -31,6 +31,15 @@ if(TARGET === 'start' || !TARGET) {
 			host: process.env.HOST,
 			port: process.env.PORT
 		},
+		module: {
+			loaders: [
+				{
+					test: /\.css$/,
+					loaders: ['style', 'css'],
+					include: PATHS.app
+				}
+			]
+		},
 		plugins: [
 			new webpack.HotModuleReplacementPlugin()
 		]
