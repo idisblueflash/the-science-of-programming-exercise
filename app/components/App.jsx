@@ -18,6 +18,12 @@ export default class App extends React.Component {
 					label: 'b)',
 					answer: '',
 					key:'FT',
+				},
+				{
+					id: uuid.v4(),
+					label: 'c)',
+					answer: '',
+					key:'TT',
 				}
 			]
 		}
