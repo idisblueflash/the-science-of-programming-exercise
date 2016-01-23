@@ -1,8 +1,12 @@
 {
   "name": "the-science-of-programming",
   "version": "1.0.0",
-  "description": "",
+  "description": "exercise questions and answers for daily learning",
   "main": "common.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idisblueflash/the-science-of-programming-exercise.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
