@@ -18,7 +18,7 @@ export default class Drill extends React.Component {
 	renderDrill = () => {
 		return <div>
 			{this.props.data.label}
-			<input id={this.props.data.id} placeholder="all states: FF" onKeyPress={this.updateDrill}/>
+			<input id={this.props.data.id} placeholder={this.props.data.placeholder} onKeyPress={this.updateDrill}/>
 		</div>;
 	};
 	renderChecked = () => {
