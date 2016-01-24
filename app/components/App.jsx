@@ -5,37 +5,34 @@ import Drills from './Drills.jsx';
 export default class App extends React.Component {
 	constructor(props){
 		super(props);
+		const rawDrills = [
+			'a) FF', 'b) FT', 'c) TT', 'd) FF', 'e) TF'
+		];
+		const formatedDrills = rawDrills.map(function (rawDrill) {
+			const [label, key] = rawDrill.split(' ');
+			return {
+				id: uuid.v4(),
+				label: label,
+				answer: '',
+				key: key
+			};
+		});
+
 		this.state = {
-			drills: [
-				{
-					id: uuid.v4(),
-					label: 'a)',
-					answer: '',
-					key:'FF',
-				},
-				{
-					id: uuid.v4(),
-					label: 'b)',
-					answer: '',
-					key:'FT',
-				},
-				{
-					id: uuid.v4(),
-					label: 'c)',
-					answer: '',
-					key:'TT',
-				}
-			]
+			drills: formatedDrills
 		}
 	}
+	
 	render() {
 		const drills = this.state.drills;
+		console.log(drills);
 		return (
 			<div>
 				<Drills datas={drills} onUpdate={this.updateDrill} />
 			</div>
 		);
-	}
+	};
+	
 	updateDrill = (id, answer) => {
 		console.log(id, answer);
 		const drills = this.state.drills.map(drill => {
