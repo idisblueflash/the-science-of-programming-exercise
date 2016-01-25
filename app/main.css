@@ -19,3 +19,7 @@ input {
 	font-size: inherit;
 	width: 200px;
 }
+
+div {
+	clear: both;
+}
