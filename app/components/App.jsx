@@ -12,12 +12,16 @@ export default class App extends React.Component {
 			'b) FT', 'c) TT', 'd) FF', 'e) TF', 'f) TT', 'g) FF', 
 			'h) TF', 'i) FT', 'j) FT', 'k) TT', 'l) TT', 'm) FT'
 		];
+		const rawDrills2 = [
+			'a) TTTTTTTF all_possible_answers', 'b) FF'
+		];
 		
 		const makeDrill = this.makeDrill;
 		const formatedDrills = rawDrills.map(function (rawDrill) {return makeDrill(rawDrill)});
+		const formatedDrills2 = rawDrills2.map(function (rawDrill) {return makeDrill(rawDrill)});
 
 		this.state = {
-			drills: formatedDrills
+			drills: [formatedDrills, formatedDrills2]
 		};
 	}
 	
@@ -26,9 +30,10 @@ export default class App extends React.Component {
 		return (
 			<div>
 				<Question img="imgs/ch01-e1.png" titleHeight="138"/>
-				<Drills datas={drills} onUpdate={this.updateDrill} />
+				<Drills datas={drills[0]} onUpdate={this.updateDrill} />
 
 				<Question img="imgs/ch01-e2.png" />
+				<Drills datas={drills[1]} onUpdate={this.updateDrill} />
 				<Timer />
 			</div>
 		);
@@ -45,13 +50,15 @@ export default class App extends React.Component {
 	};
 	updateDrill = (id, answer) => {
 		// console.log(id, answer);
-		const drills = this.state.drills.map(drill => {
-			if(drill.id === id && answer) {
-				drill.answer = answer;
-			}
-			return drill;
+		const drillGroups = this.state.drills.map(drillGroup => {
+			return drillGroup.map(drill => {
+				if(drill.id === id && answer) {
+					drill.answer = answer;
+				}
+				return drill;	
+			})
 		});
 
-		this.setState({drills});
+		this.setState({drillGroups});
 	};
 }
