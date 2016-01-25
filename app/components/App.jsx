@@ -32,8 +32,10 @@ export default class App extends React.Component {
 		const drills = this.state.drills;
 		return (
 			<div>
-				<Question />
+				<Question img="imgs/ch01-e1.png" titleHeight="138"/>
 				<Drills datas={drills} onUpdate={this.updateDrill} />
+
+				<Question img="imgs/ch01-e2.png" />
 				<Timer />
 			</div>
 		);
