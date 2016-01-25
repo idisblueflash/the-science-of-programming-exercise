@@ -1,6 +1,7 @@
 import uuid from 'node-uuid';
 import React from 'react';
 import Drills from './Drills.jsx';
+import Timer from './Timer.jsx';
 
 export default class App extends React.Component {
 	constructor(props){
@@ -21,21 +22,21 @@ export default class App extends React.Component {
 
 		this.state = {
 			drills: formatedDrills
-		}
+		};
 	}
 	
 	render() {
 		const drills = this.state.drills;
-		console.log(drills);
 		return (
 			<div>
 				<Drills datas={drills} onUpdate={this.updateDrill} />
+				<Timer />
 			</div>
 		);
 	};
 	
 	updateDrill = (id, answer) => {
-		console.log(id, answer);
+		// console.log(id, answer);
 		const drills = this.state.drills.map(drill => {
 			if(drill.id === id && answer) {
 				drill.answer = answer;
