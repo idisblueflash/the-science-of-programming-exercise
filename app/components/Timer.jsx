@@ -12,13 +12,11 @@ export default class Timer extends React.Component {
 		};
 	}
 
-	
-
 	render() {
 		return (
 			<div>
-				time: {this.state.count}
-				<button onClick={this.stopTimer} >Finish</button>
+				{this.state.count} seconds
+				<button onClick={this.stopTimer} >I'm done</button>
 			</div>
 		)
 	};
