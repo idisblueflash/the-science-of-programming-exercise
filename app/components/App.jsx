@@ -4,24 +4,41 @@ import Drills from './Drills.jsx';
 import Timer from './Timer.jsx';
 import Question from './Question.jsx';
 
+const makeDrill = (rawDrill) => {
+	const [label, key, placeholder] = rawDrill.split(' ');
+	return {
+		id: uuid.v4(),
+		label: label,
+		answer: '',
+		key: key,
+		placeholder: placeholder
+	};
+};
+
+const makeGroups = (groups) => {
+	return groups.map(group => {
+		return group.map(drill => {
+			return makeDrill(drill);
+		});
+	});
+}
+
 export default class App extends React.Component {
 	constructor(props){
 		super(props);
-		const rawDrills = [
-			'a) FF all_states:_FF', 
-			'b) FT', 'c) TT', 'd) FF', 'e) TF', 'f) TT', 'g) FF', 
-			'h) TF', 'i) FT', 'j) FT', 'k) TT', 'l) TT', 'm) FT'
-		];
-		const rawDrills2 = [
-			'a) TTTTTTTF all_possible_answers', 'b) FF'
-		];
-		
-		const makeDrill = this.makeDrill;
-		const formatedDrills = rawDrills.map(function (rawDrill) {return makeDrill(rawDrill)});
-		const formatedDrills2 = rawDrills2.map(function (rawDrill) {return makeDrill(rawDrill)});
+		const rawDrills =  [
+				[
+					'a) FF all_states:_FF', 
+					'b) FT', 'c) TT', 'd) FF', 'e) TF', 'f) TT', 'g) FF', 
+					'h) TF', 'i) FT', 'j) FT', 'k) TT', 'l) TT', 'm) FT'
+				],
+				[
+					'a) TTTTTTTF all_possible_answers', 'b) FF'
+				]
+			];
 
 		this.state = {
-			drills: [formatedDrills, formatedDrills2]
+			drills: makeGroups(rawDrills)
 		};
 	}
 	
@@ -38,16 +55,7 @@ export default class App extends React.Component {
 			</div>
 		);
 	};
-	makeDrill = (rawDrill) => {
-		const [label, key, placeholder] = rawDrill.split(' ');
-		return {
-			id: uuid.v4(),
-			label: label,
-			answer: '',
-			key: key,
-			placeholder: placeholder
-		};
-	};
+
 	updateDrill = (id, answer) => {
 		// console.log(id, answer);
 		const drillGroups = this.state.drills.map(drillGroup => {
