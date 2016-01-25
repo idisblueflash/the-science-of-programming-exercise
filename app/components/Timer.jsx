@@ -16,7 +16,7 @@ export default class Timer extends React.Component {
 		return (
 			<div>
 				{this.state.count} seconds
-				<button onClick={this.stopTimer} >I'm done</button>
+				<button onClick={this.stopTimer} >I am done</button>
 			</div>
 		)
 	};
