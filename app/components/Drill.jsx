@@ -18,28 +18,32 @@ export default class Drill extends React.Component {
 	renderDrill = () => {
 		return <div>
 			{this.props.data.label}
-			<input id={this.props.data.id} placeholder={this.props.data.placeholder} onKeyPress={this.updateDrill}/>
+			<input id={this.props.data.id} 
+				placeholder={this.props.data.placeholder} 
+				onBlur={this.checkDrill} 
+				onFocus={this.enterAnswer} />
 		</div>;
 	};
 	renderChecked = () => {
 		return <div>
 			{this.props.data.label}
-			<input id={this.props.data.id} placeholder="all states: FF" 
-				onKeyPress={this.updateDrill} 
-				value={(this.props.data.key == this.props.data.answer.toUpperCase()) ? "✔️" : "❌ key:" + this.props.data.key}/>
+			<input id={this.props.data.id}
+				value={(this.props.data.key == this.props.data.answer.toUpperCase()) ? "✔️" : "❌ key:" + this.props.data.key}
+				onBlur={this.checkDrill}
+				onFocus={this.enterAnswer} />
 		</div>;
 	};
-	updateDrill = (e) => {
-		if(e.key === 'Enter') {
-			console.log('Drill.updateDrill');
+	enterAnswer = (e) => {
+		this.setState({checked: false});
+	};
+	checkDrill = (e) => {
+		const value = e.target.value;
+		if(value != ""){
 			this.setState({checked: true});
-			const value = e.target.value;
 
 			if(this.props.onUpdate && value.trim()) {
 				this.props.onUpdate(value);
-			}	
-		}else{
-			this.setState({checked: false});
+			}
 		}
 	};
 }
