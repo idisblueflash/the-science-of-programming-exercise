@@ -9,7 +9,7 @@ export default class App extends React.Component {
 		const rawDrills = [
 			'a) FF all_states:_FF', 
 			'b) FT', 'c) TT', 'd) FF', 'e) TF', 'f) TT', 'g) FF', 
-			'h) TF', 'i) FT', 'j) FT', 'k) TT', 'l) TT', 'm) FT'
+			'h) TF', 'i) TF', 'j) FT', 'k) TT', 'l) TT', 'm) FT'
 		];
 		const formatedDrills = rawDrills.map(function (rawDrill) {
 			const [label, key, placeholder] = rawDrill.split(' ');
