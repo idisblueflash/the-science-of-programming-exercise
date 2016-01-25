@@ -33,7 +33,9 @@ export default class App extends React.Component {
 					'h) TF', 'i) FT', 'j) FT', 'k) TT', 'l) TT', 'm) FT'
 				],
 				[
-					'a) TTTTTTTF all_possible_answers', 'b) FF'
+					'a) TTTTTTTF all_possible_answers', 'b) FTTTTTTT', 'c) TTTFFFFF',
+					'd) TTTTTFFF', 'e) TTTTTTFF', 'f) FFFFTTFF', 'g) TTTTTTFF',
+					'h) TTFFFFF', 'i) TTTTTTTT'
 				]
 			];
 
