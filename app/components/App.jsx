@@ -12,16 +12,9 @@ export default class App extends React.Component {
 			'b) FT', 'c) TT', 'd) FF', 'e) TF', 'f) TT', 'g) FF', 
 			'h) TF', 'i) FT', 'j) FT', 'k) TT', 'l) TT', 'm) FT'
 		];
-		const formatedDrills = rawDrills.map(function (rawDrill) {
-			const [label, key, placeholder] = rawDrill.split(' ');
-			return {
-				id: uuid.v4(),
-				label: label,
-				answer: '',
-				key: key,
-				placeholder: placeholder
-			};
-		});
+		
+		const makeDrill = this.makeDrill;
+		const formatedDrills = rawDrills.map(function (rawDrill) {return makeDrill(rawDrill)});
 
 		this.state = {
 			drills: formatedDrills
@@ -40,7 +33,16 @@ export default class App extends React.Component {
 			</div>
 		);
 	};
-	
+	makeDrill = (rawDrill) => {
+		const [label, key, placeholder] = rawDrill.split(' ');
+		return {
+			id: uuid.v4(),
+			label: label,
+			answer: '',
+			key: key,
+			placeholder: placeholder
+		};
+	};
 	updateDrill = (id, answer) => {
 		// console.log(id, answer);
 		const drills = this.state.drills.map(drill => {
