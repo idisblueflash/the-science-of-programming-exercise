@@ -2,6 +2,7 @@ import uuid from 'node-uuid';
 import React from 'react';
 import Drills from './Drills.jsx';
 import Timer from './Timer.jsx';
+import Question from './Question.jsx';
 
 export default class App extends React.Component {
 	constructor(props){
@@ -31,6 +32,7 @@ export default class App extends React.Component {
 		const drills = this.state.drills;
 		return (
 			<div>
+				<Question />
 				<Drills datas={drills} onUpdate={this.updateDrill} />
 				<Timer />
 			</div>
