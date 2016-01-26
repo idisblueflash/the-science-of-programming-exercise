@@ -22,3 +22,7 @@ input {
 div {
 	clear: both;
 }
+
+td {
+	padding: 0 20px;
+}
