@@ -18,10 +18,24 @@ const makeDrill = (rawDrill) => {
 
 const makeGroups = (groups) => {
 	return groups.map(group => {
+		group = shuffle(group);
 		return group.map(drill => {
 			return makeDrill(drill);
 		});
 	});
+}
+
+// http://bost.ocks.org/mike/shuffle/
+const shuffle = (array) => {
+  var copy = [], n = array.length, i;
+  // While there remain elements to shuffle…
+  while (n) {
+    // Pick a remaining element…
+    i = Math.floor(Math.random() * n--);
+    // And move it to the new array.
+    copy.push(array.splice(i, 1)[0]);
+  }
+  return copy;
 }
 
 export default class App extends React.Component {
