@@ -28,7 +28,7 @@ export default class Drill extends React.Component {
 		return <div>
 			{this.props.data.label}
 			<input id={this.props.data.id}
-				value={(this.props.data.key == this.props.data.answer.toUpperCase()) ? "✔️" : "❌ key:" + this.props.data.key}
+				value={(this.props.data.key.toUpperCase() == this.props.data.answer.toUpperCase()) ? "✔️" : "❌ key:" + this.props.data.key}
 				onBlur={this.checkDrill}
 				onFocus={this.enterAnswer} />
 		</div>;
