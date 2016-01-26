@@ -25,7 +25,7 @@ export default class TopTen extends React.Component {
 	}
 
 	renderRow = (topRow) => {
-		console.log('renderRow: ', topRow);
+		// console.log('renderRow: ', topRow);
 		return (
 			<tr key={topRow.date}>
 				<td>{topRow.date}</td>
