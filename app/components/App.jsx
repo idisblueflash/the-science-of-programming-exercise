@@ -6,7 +6,7 @@ import Question from './Question.jsx';
 import TopTen from './TopTen.jsx';
 
 const makeDrill = (rawDrill) => {
-	const [label, key, placeholder] = rawDrill.split(' ');
+	const [label, key, placeholder] = rawDrill.split('~');
 	return {
 		id: uuid.v4(),
 		label: label,
@@ -43,15 +43,15 @@ export default class App extends React.Component {
 		super(props);
 		const rawDrills =  [
 				[
-					'a) FF all_states:_FF', 
-					'b) FT', 'c) TT', 'd) FF', 'e) TF', 'f) TT', 'g) FF', 
-					'h) TF', 'i) FT', 'j) FT', 'k) TT', 'l) TT', 'm) FT'
+					'a)~FF~all states: FF', 
+					'b)~FT', 'c)~TT', 'd)~FF', 'e)~TF', 'f)~TT', 'g)~FF', 
+					'h)~TF', 'i)~FT', 'j)~FT', 'k)~TT', 'l)~TT', 'm)~FT'
 				],
 				[
-					'a) TTTTTTTF all_possible_answers', 
-					'b) TFFFFFFF', 'c) TTTFFFFF', 'd) TTTTTFFF', 
-					'e) TTTTTTFF', 'f) FFFFTTFF', 'g) TTTTTTFF',
-					'h) TTFFFFFF', 'i) TTTTTTTT'
+					'a)~TTTTTTTF~all possible answers', 
+					'b)~TFFFFFFF', 'c)~TTTFFFFF', 'd)~TTTTTFFF', 
+					'e)~TTTTTTFF', 'f)~FFFFTTFF', 'g)~TTTTTTFF',
+					'h)~TTFFFFFF', 'i)~TTTTTTTT'
 				]
 			];
 
@@ -75,6 +75,8 @@ export default class App extends React.Component {
 
 				<Question img="imgs/ch01-e2.png" />
 				<Drills datas={drills[1]} onUpdate={this.updateDrill} />
+
+				<Question img="imgs/ch01-e3.png" titleHeight="40"/>
 				<Timer />
 			</div>
 		);
