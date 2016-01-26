@@ -58,8 +58,9 @@ export default class App extends React.Component {
 		this.state = {
 			drills: makeGroups(rawDrills),
 			topTen: [
-				{date: '06/1/26 9:07', spend: 969, errors: 3, notes: '2.e h'},
-				{date: '06/1/26 10:40', spend: 1029, errors: 1, notes: '1. b'},
+				{date: '06/1/26 21:18', spend: 878,  errors: 0, notes: ''},
+				{date: '06/1/26 09:07', spend: 969,  errors: 3, notes: '2. e) h)'},
+				{date: '06/1/26 10:40', spend: 1029, errors: 1, notes: '1. b)'},
 			]
 		};
 	}
