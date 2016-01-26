@@ -58,10 +58,10 @@ export default class App extends React.Component {
 					'c)~xgreatery ^ ygreaterz => vequalw',
 					'd)~xlessy ^ ylessz ^ vequalw', 
 					'e)~xlessy v ylessz v vequalw', 
-					'f)~](xlessy ^ ylessz ^ vequalw)',
+					'f)~](xlessy v ylessz v vequalw)',
 					'g)~](xlessy ^ ylessz ^ vequalw)',
-					'h)~(xlessy => ylessz) v (xatleasty => vequalw)',
-					'i)~(xlessy => ylessz = vequalw) v (xatleasty => ]ylessz) v (vequalw => xlessy)',
+					'h)~(xlessy => ylessz) ^ (xatleasty => vequalw)',
+					'i)~(xlessy => ylessz = vequalw) ^ (xatleasty => ]ylessz) ^ (vequalw => xlessy)',
 					'j)~begunxlessy => yequalpower2',
 					'k)~beginxless0 => noend',
 				]
