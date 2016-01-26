@@ -48,9 +48,10 @@ export default class App extends React.Component {
 					'h) TF', 'i) FT', 'j) FT', 'k) TT', 'l) TT', 'm) FT'
 				],
 				[
-					'a) TTTTTTTF all_possible_answers', 'b) TFFFFFFF', 'c) TTTFFFFF',
-					'd) TTTTTFFF', 'e) TTTTTTFF', 'f) FFFFTTFF', 'g) TTTTTTFF',
-					'h) TTFFFFF', 'i) TTTTTTTT'
+					'a) TTTTTTTF all_possible_answers', 
+					'b) TFFFFFFF', 'c) TTTFFFFF', 'd) TTTTTFFF', 
+					'e) TTTTTTFF', 'f) FFFFTTFF', 'g) TTTTTTFF',
+					'h) TTFFFFFF', 'i) TTTTTTTT'
 				]
 			];
 
@@ -58,7 +59,7 @@ export default class App extends React.Component {
 			drills: makeGroups(rawDrills),
 			topTen: [
 				{date: '06/1/26 9:07', spend: 969, errors: 3, notes: '2.e h'},
-				{date: '06/1/25 9:07', spend: 969, errors: 3, notes: ''}
+				{date: '06/1/26 10:40', spend: 1029, errors: 1, notes: '1. b'},
 			]
 		};
 	}
