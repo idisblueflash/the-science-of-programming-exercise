@@ -52,6 +52,18 @@ export default class App extends React.Component {
 					'b)~TFFFFFFF', 'c)~TTTFFFFF', 'd)~TTTTTFFF', 
 					'e)~TTTTTTFF', 'f)~FFFFTTFF', 'g)~TTTTTTFF',
 					'h)~TTFFFFFF', 'i)~TTTTTTTT'
+				],[
+					'a)~xlessy v xequaly~(x < y) ^/v/=/=>', 
+					'b)~xlessy v xequaly v xgreatery', 
+					'c)~xgreatery ^ ygreaterz => vequalw',
+					'd)~xlessy ^ ylessz ^ vequalw', 
+					'e)~xlessy v ylessz v vequalw', 
+					'f)~](xlessy ^ ylessz ^ vequalw)',
+					'g)~](xlessy ^ ylessz ^ vequalw)',
+					'h)~(xlessy => ylessz) v (xatleasty => vequalw)',
+					'i)~(xlessy => ylessz = vequalw) v (xatleasty => ]ylessz) v (vequalw => xlessy)',
+					'j)~begunxlessy => yequalpower2',
+					'k)~beginxless0 => noend',
 				]
 			];
 
@@ -77,6 +89,7 @@ export default class App extends React.Component {
 				<Drills datas={drills[1]} onUpdate={this.updateDrill} />
 
 				<Question img="imgs/ch01-e3.png" titleHeight="40"/>
+				<Drills datas={drills[2]} onUpdate={this.updateDrill} />
 				<Timer />
 			</div>
 		);
