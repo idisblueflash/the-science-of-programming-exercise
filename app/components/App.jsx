@@ -3,6 +3,7 @@ import React from 'react';
 import Drills from './Drills.jsx';
 import Timer from './Timer.jsx';
 import Question from './Question.jsx';
+import TopTen from './TopTen.jsx';
 
 const makeDrill = (rawDrill) => {
 	const [label, key, placeholder] = rawDrill.split(' ');
@@ -40,7 +41,11 @@ export default class App extends React.Component {
 			];
 
 		this.state = {
-			drills: makeGroups(rawDrills)
+			drills: makeGroups(rawDrills),
+			topTen: [
+				{date: '06/1/26 9:07', spend: 969, errors: 3, notes: '2.b e h'},
+				{date: '06/1/25 9:07', spend: 969, errors: 3, notes: '2.b e h'}
+			]
 		};
 	}
 	
@@ -48,6 +53,7 @@ export default class App extends React.Component {
 		const drills = this.state.drills;
 		return (
 			<div>
+				<TopTen datas={this.state.topTen} />
 				<Question img="imgs/ch01-e1.png" titleHeight="138"/>
 				<Drills datas={drills[0]} onUpdate={this.updateDrill} />
 
