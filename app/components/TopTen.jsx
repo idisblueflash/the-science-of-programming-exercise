@@ -7,17 +7,20 @@ export default class TopTen extends React.Component {
 	render() {
 		// {date: '06/1/26 9:07', spend: 969, errors: 3, notes: '2.b e h'}
 		return (
-			<table>
-				<tbody>
-				<tr>
-					<th>日期</th>
-					<th>耗时</th>
-					<th>错误</th>
-					<th>备注</th>
-				</tr>
-				{this.renderRows(this.props.datas)}
-				</tbody>
-			</table>
+			<div>
+				<h4>Top Ten</h4>
+				<table>
+					<tbody>
+					<tr>
+						<th>Date</th>
+						<th>Spent</th>
+						<th>Errors</th>
+						<th>Notes</th>
+					</tr>
+					{this.renderRows(this.props.datas)}
+					</tbody>
+				</table>
+			</div>
 		);
 	}
 
