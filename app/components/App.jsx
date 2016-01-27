@@ -86,7 +86,7 @@ export default class App extends React.Component {
 				<Question img="imgs/ch01-e1.png" titleHeight="138"/>
 				<Drills datas={drills[0]} onUpdate={this.updateDrill} />
 
-				<Question img="imgs/ch01-e2.png" />
+				<Question img="imgs/ch01-e2.png"  titleHeight="60"/>
 				<Drills datas={drills[1]} onUpdate={this.updateDrill} />
 
 				<Question img="imgs/ch01-e3.png" titleHeight="40"/>
