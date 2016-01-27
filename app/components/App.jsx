@@ -62,7 +62,7 @@ export default class App extends React.Component {
 					'g)~](xlessy ^ ylessz ^ vequalw)',
 					'h)~(xlessy => ylessz) ^ (xatleasty => vequalw)',
 					'i)~(xlessy => ylessz = vequalw) ^ (xatleasty => ]ylessz) ^ (vequalw => xlessy)',
-					'j)~begunxlessy => yequalpower2',
+					'j)~beginxlessy => yequalpower2',
 					'k)~beginxless0 => noend',
 				]
 			];
