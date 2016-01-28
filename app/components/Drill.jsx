@@ -12,9 +12,10 @@ export default class Drill extends React.Component {
 		// setup color and answer text
 		const isRight = this.props.data.key.toUpperCase() == this.props.data.answer.toUpperCase();
 		const style = {
-			color: isRight ? 'green' : 'red'
+			color: isRight ? 'green' : 'red',
+			width: this.props.maxWidth
 		};
-		const formatedAnswer = isRight ? this.props.data.answer :  "Need: " + this.props.data.key + " but got: " + this.props.data.answer;
+		const formatedAnswer = isRight ? this.props.data.answer : this.props.data.key ;
 
 		if(this.state.checked) {
 			return this.renderChecked(style, formatedAnswer);
@@ -26,9 +27,9 @@ export default class Drill extends React.Component {
 		return <div>
 			{this.props.data.label}
 			<input id={this.props.data.id} 
+				style={{width:this.props.maxWidth}}
 				placeholder={this.props.data.placeholder} 
-				onBlur={this.checkDrill} 
-				onFocus={this.enterAnswer} />
+				onBlur={this.checkDrill} />
 		</div>;
 	};
 	renderChecked = (style, formatedAnswer) => {
@@ -38,7 +39,6 @@ export default class Drill extends React.Component {
 				id={this.props.data.id}
 				style={style}
 				value={formatedAnswer}
-				onBlur={this.checkDrill}
 				onFocus={this.enterAnswer} />
 		</div>;
 	};

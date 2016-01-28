@@ -1,11 +1,13 @@
 import React from 'react';
 import Drill from './Drill.jsx';
 
-export default ({datas, onUpdate}) => {
+export default ({datas, maxWidth, onUpdate}) => {
 	return (
 		<ul>{datas.map(drill =>
 			<li key={drill.id}>
-				<Drill data={drill} onUpdate={onUpdate.bind(null, drill.id)} />
+				<Drill data={drill} 
+					maxWidth = {maxWidth}
+					onUpdate={onUpdate.bind(null, drill.id)} />
 			</li>
 		)}</ul>
 	);
