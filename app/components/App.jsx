@@ -86,7 +86,15 @@ export default class App extends React.Component {
 				'i)~(xlessy => ylessz = vequalw) ^ (xatleasty => ]ylessz) ^ (vequalw => xlessy)',
 				'j)~beginxlessy => yequalpower2',
 				'k)~beginxless0 => noend',
+			],[
+				'a)~raining v ]raining => goingswimming~ex: raining => goingswimming', 
+				'b)~raining => ]goingswimming',
+				'c)~rainingcats ^ rainingdogs',
+				'd)~rainingcats v rainingdogs',
+				'e)~rainscats ^ rainsdogs => eatmyhat ^ ]goswimming',
+				'f)~rainscats ^ rainingdogs ^ swimming => eatmyhat'
 			]
+
 		];
 		const maxWidths = getMaxWidths(rawDrills);
 
@@ -118,6 +126,9 @@ export default class App extends React.Component {
 
 				<Question img="imgs/ch01-e3.png" titleHeight="40"/>
 				<Drills datas={drills[2]} maxWidth={this.state.widths[2]} onUpdate={this.updateDrill} />
+
+				<Question img="imgs/ch01-e4.png" titleHeight="115"/>
+				<Drills datas={drills[3]} maxWidth={this.state.widths[3]} onUpdate={this.updateDrill} />
 				<Timer />
 			</div>
 		);

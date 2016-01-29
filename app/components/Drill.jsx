@@ -15,9 +15,8 @@ const compareString = ( answer, key ) => {
 	while( i < key.length){
 		const answerChar = answer.substr(i,1);
 		const keyChar = key.substr(i,1);
-
-		console.log('comparing: answer('+ answerChar + ") with " + keyChar);
 		if( answerChar != keyChar) {
+			console.log('comparing: answer('+ answerChar + ") with " + keyChar);
 			return i;
 		}
 		i++;
