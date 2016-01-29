@@ -97,6 +97,7 @@ export default class App extends React.Component {
 				{date: '06/1/26 21:18', spend: 878,  errors: 0, notes: ''},
 				{date: '06/1/26 09:07', spend: 969,  errors: 3, notes: '2. e) h)'},
 				{date: '06/1/26 10:40', spend: 1029, errors: 1, notes: '1. b)'},
+				{date: '06/1/28 10:23', spend: 1294, errors: 3, notes: '2. f) c) i)'},
 				{date: '06/1/27 09:26', spend: 1399, errors: 6, notes: '1. j) 2. i) 3. c) j) k) f)'},
 				{date: '06/1/27 13:45', spend: 1372, errors: 6, notes: '2. b) c)'},
 			]
