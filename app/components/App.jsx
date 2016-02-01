@@ -84,7 +84,7 @@ export default class App extends React.Component {
 				'g)~](xlessy ^ ylessz ^ vequalw)',
 				'h)~(xlessy => ylessz) ^ (xatleasty => vequalw)',
 				'i)~(xlessy => ylessz = vequalw) ^ (xatleasty => ]ylessz) ^ (vequalw => xlessy)',
-				'j)~beginxlessy => yequal(xpower2)',
+				'j)~beginxlessy => yequal(2powerx)',
 				'k)~beginxless0 => noend',
 			],[
 				'a)~raining v ]raining => goingswimming~ex: raining => goingswimming', 
@@ -102,6 +102,7 @@ export default class App extends React.Component {
 			drills: makeGroups(rawDrills),
 			widths: maxWidths,
 			topTen: [
+				{date: '06/2/01 08:39', spend: 1234, errors: 1, notes: '3. h)'},
 				{date: '06/1/30 09:49', spend: 1318, errors: 2, notes: '3. f) 4. a)'},
 				{date: '06/1/26 21:18', spend: 878,  errors: 0, notes: ''},
 				{date: '06/1/26 09:07', spend: 969,  errors: 3, notes: '2. e) h)'},
