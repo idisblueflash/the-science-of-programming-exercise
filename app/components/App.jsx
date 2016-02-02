@@ -132,6 +132,8 @@ export default class App extends React.Component {
 
 				<Question img="imgs/ch01-e4.png" titleHeight="115"/>
 				<Drills datas={drills[3]} maxWidth={this.state.widths[3]} onUpdate={this.updateDrill} />
+
+				<Question img="imgs/ch02-e1.png" titleHeight="40"/>
 				<Timer />
 			</div>
 		);
