@@ -26,7 +26,7 @@ export default class Timer extends React.Component {
 		// console.log('timer with seconds:', this.state.seconds);
 		let second =  this.state.seconds;
 		let minute =  this.state.minutes;
-		if(second == 60){
+		if(second == 59){
 			second = 0;
 			minute++;
 			this.setState({minutes: minute});
