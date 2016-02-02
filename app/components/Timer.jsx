@@ -7,7 +7,8 @@ export default class Timer extends React.Component {
 		const counter=setInterval(this.timer, 1000); //1000 will  run it every 1 second
 
 		this.state = {
-			count: 0,
+			seconds: 0,
+			minutes: 0,
 			counter: counter
 		};
 	}
@@ -15,17 +16,24 @@ export default class Timer extends React.Component {
 	render() {
 		return (
 			<div>
-				{this.state.count} seconds
+				{this.state.minutes} minutes {this.state.seconds} seconds
 				<button onClick={this.stopTimer} >I am done</button>
 			</div>
 		)
 	};
 
 	timer = () => {
-		// console.log('timer with seconds:', this.state.count);
-		let count =  this.state.count;
-		count++;
-		this.setState({count: count});
+		// console.log('timer with seconds:', this.state.seconds);
+		let second =  this.state.seconds;
+		let minute =  this.state.minutes;
+		if(second == 60){
+			second = 0;
+			minute++;
+			this.setState({minutes: minute});
+		}else{
+			second++;	
+		}
+		this.setState({seconds: second});
 	};
 
 	stopTimer = () => {
