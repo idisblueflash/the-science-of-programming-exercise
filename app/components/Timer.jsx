@@ -16,7 +16,7 @@ export default class Timer extends React.Component {
 	render() {
 		return (
 			<div>
-				Spent: {this.state.minutes}'{this.state.seconds}
+				Spent: {this.state.minutes + "'"}{this.state.seconds}
 				<button onClick={this.stopTimer} >I am done</button>
 			</div>
 		)
