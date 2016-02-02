@@ -102,6 +102,7 @@ export default class App extends React.Component {
 			drills: makeGroups(rawDrills),
 			widths: maxWidths,
 			topTen: [
+				{date: '06/2/02 13:52', spend: 1100, errors: 0, notes: ''},
 				{date: '06/2/01 08:39', spend: 1234, errors: 1, notes: '3. h)'},
 				{date: '06/1/30 09:49', spend: 1318, errors: 2, notes: '3. f) 4. a)'},
 				{date: '06/1/26 21:18', spend: 878,  errors: 0, notes: ''},
